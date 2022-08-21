@@ -110,4 +110,10 @@ let dataTypeNumber = 70 // Numeric data type
 let dataTypeString = 'number' // string data type
 let dataTypeBoolean = true // boolean data type
 
+// Palindrome Checker function
 
+function palindromeChecker(str) {
+    var reversed = str.split('').reverse().join('');
+    return str === reversed;
+    }
+console.log(palindromeChecker('rar'));
