@@ -226,3 +226,11 @@ for (let i = 0; i < 6; i++) {
 }
 console.log(verificationCode);
 
+
+// calculate how much you will be paid
+
+const hoursWorked = prompt("How many hours did you work this week?");
+const hourlyWage = prompt("How much do you make per hour?");
+const totalPay = hoursWorked * hourlyWage;
+alert("You will be paid $" + totalPay + " this week.");
+
