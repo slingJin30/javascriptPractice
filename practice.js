@@ -234,3 +234,21 @@ const hourlyWage = prompt("How much do you make per hour?");
 const totalPay = hoursWorked * hourlyWage;
 alert("You will be paid $" + totalPay + " this week.");
 
+// count the times table
+
+function timesTable(num) {
+    var result = "";
+    for (var i = 1; i <= 10; i++) {
+        result += num + " x " + i + " = " + (num * i) + "\n";
+    }
+    return result;
+    }
+    console.log(timesTable(2));
+    console.log(timesTable(3));
+    console.log(timesTable(4));
+    console.log(timesTable(5));
+    console.log(timesTable(6));
+    console.log(timesTable(7));
+    console.log(timesTable(8));
+    console.log(timesTable(9));
+    console.log(timesTable(10));
