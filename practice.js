@@ -252,3 +252,18 @@ function timesTable(num) {
     console.log(timesTable(8));
     console.log(timesTable(9));
     console.log(timesTable(10));
+
+// random password generator
+function generatePassword() {
+    let password = "";
+    let possible =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    for (let i = 0; i < 20; i++) {
+        password += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return password;
+    } 
+for (let i = 0; i < 5; i++) {
+    console.log(generatePassword());
+}
+
