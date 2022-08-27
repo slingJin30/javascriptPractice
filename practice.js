@@ -267,3 +267,28 @@ for (let i = 0; i < 5; i++) {
     console.log(generatePassword());
 }
 
+// check student grade
+
+function checkScore(score) {
+  switch (true) {
+    case score >= 80 && score <= 100:
+      return "A";
+      break;
+    case score >= 70 && score <= 79:
+      return "B";
+      break;
+    case score >= 60 && score <= 69:
+      return "C";
+      break;
+    case score >= 50 && score <= 59:
+      return "D";
+      break;
+    case score >= 0 && score <= 49:
+      return "F";
+      break;
+    default:
+      return "Invalid score";
+  }
+}
+
+console.log(`The grade of the student is ${checkScore(83)}`);
