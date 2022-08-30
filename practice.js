@@ -214,13 +214,16 @@ let currentSeconds = currentDate.getSeconds();
 let secondsLeft = 60 - currentSeconds;
 console.log(secondsLeft);
 
-// use a verification code
+// message encryption
 let message = 'test message';
 let encryptedMessage = '';
 for (let i = 0; i < message.length; i++) {
     encryptedMessage += String.fromCharCode(message.charCodeAt(i) + 1);
 }
-console.log(encryptedMessage); verificationCode = '';
+console.log(encryptedMessage); 
+
+// use a verification code
+verificationCode = '';
 for (let i = 0; i < 6; i++) {
     verificationCode += Math.floor(Math.random() * 10);
 }
