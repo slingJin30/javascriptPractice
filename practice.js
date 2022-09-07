@@ -112,4 +112,188 @@ let dataTypeBoolean = true // boolean data type
 let variableUndefined;
 console.log(variableUndefined) // logs undefined
 
+// Palindrome Checker function
 
+function palindromeChecker(str) {
+    let reversed = str.split('').reverse().join('');
+    return str === reversed;
+    }
+console.log(palindromeChecker('rar'));
+
+// search function (not case senstive) 
+
+function searchCaseInsensitive(str, searchTerm) {
+    return str.toLowerCase().includes(searchTerm.toLowerCase());
+}
+console.log(searchCaseInsensitive('hello world frank', 'Frank'));
+
+// search function (case sensitive)
+
+function searchCaseSensitive(str, searchTerm) {
+    return str.includes(searchTerm);
+}
+console.log(searchCaseSensitive('hello world frank', 'Frank'));
+
+// validate email
+
+function validateEmail(email) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+console.log(validateEmail('example@example.com'));
+
+// get random number
+
+function randomNumber() {
+    return Math.floor(Math.random() * 100) + 1;
+}
+console.log(randomNumber());
+
+// get random name
+
+let names = ['Alex', 'Jimmy', 'Jordan'];
+console.log(names[Math.floor(Math.random() * names.length)]);
+
+// get random uid
+
+let uid = Math.floor(Math.random() * 10000000000) + 1;
+console.log(uid);
+
+// forbbiden characters
+
+let forbbidenCharacters = ['<', '>', '"', '\'', '\\', '/', '|', '?', '*', ':', '.', ' '];
+
+// remove fbidchars from filename
+
+let filename = 'file1.txt';
+let forbbidenCharacters = ['<', '>', '"', '\'', '\\', '/', '|', '?', '*', ':', ' '];
+for (let i = 0; i < forbbidenCharacters.length; i++) {
+    if (filename.includes(forbbidenCharacters[i])) {
+        filename = filename.replace(forbbidenCharacters[i], '');
+    }
+}
+console.log(filename);
+
+// random numbers to an array
+
+
+let randomNumbers = [];
+for (let i = 0; i < 10; i++) {
+    randomNumbers.push(Math.floor(Math.random() * 100) + 1);
+}
+console.log(randomNumbers);
+
+// check how many months left from current date
+
+let currentDate = new Date();
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+let monthsLeft = 12 - currentMonth;
+console.log(monthsLeft);
+
+// check how many days left from current date
+
+let currentDate = new Date();
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+let daysLeft = 365 - currentDate.getDate();
+console.log(daysLeft);
+
+
+// node server
+let http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}
+).listen(3000);
+console.log('Server running at http://localhost:3000/');
+
+// check how many seconds are left in a minute
+
+let currentDate = new Date();
+let currentSeconds = currentDate.getSeconds();
+let secondsLeft = 60 - currentSeconds;
+console.log(secondsLeft);
+
+// message encryption
+let message = 'test message';
+let encryptedMessage = '';
+for (let i = 0; i < message.length; i++) {
+    encryptedMessage += String.fromCharCode(message.charCodeAt(i) + 1);
+}
+console.log(encryptedMessage); 
+
+// use a verification code
+verificationCode = '';
+for (let i = 0; i < 6; i++) {
+    verificationCode += Math.floor(Math.random() * 10);
+}
+console.log(verificationCode);
+
+
+// calculate how much you will be paid
+
+const hoursWorked = prompt("How many hours did you work this week?");
+const hourlyWage = prompt("How much do you make per hour?");
+const totalPay = hoursWorked * hourlyWage;
+alert("You will be paid $" + totalPay + " this week.");
+
+// count the times table
+
+function timesTable(num) {
+    var result = "";
+    for (var i = 1; i <= 10; i++) {
+        result += num + " x " + i + " = " + (num * i) + "\n";
+    }
+    return result;
+    }
+    console.log(timesTable(2));
+    console.log(timesTable(3));
+    console.log(timesTable(4));
+    console.log(timesTable(5));
+    console.log(timesTable(6));
+    console.log(timesTable(7));
+    console.log(timesTable(8));
+    console.log(timesTable(9));
+    console.log(timesTable(10));
+
+// random password generator
+function generatePassword() {
+    let password = "";
+    let possible =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    for (let i = 0; i < 20; i++) {
+        password += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return password;
+    } 
+for (let i = 0; i < 5; i++) {
+    console.log(generatePassword());
+}
+
+// check student grade
+
+function checkScore(score) {
+  switch (true) {
+    case score >= 80 && score <= 100:
+      return "A";
+      break;
+    case score >= 70 && score <= 79:
+      return "B";
+      break;
+    case score >= 60 && score <= 69:
+      return "C";
+      break;
+    case score >= 50 && score <= 59:
+      return "D";
+      break;
+    case score >= 0 && score <= 49:
+      return "F";
+      break;
+    default:
+      return "Invalid score";
+  }
+}
+
+console.log(`The grade of the student is ${checkScore(83)}`);
